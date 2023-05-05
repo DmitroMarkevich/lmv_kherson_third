@@ -1,10 +1,10 @@
 package com.example.lmv_kherson_third.entities;
 
-public class GroupStudentDto {
+public class GroupStudentsDto {
     private int groupId;
     private String groupName;
 
-    public GroupStudentDto(int groupId, String groupName) {
+    public GroupStudentsDto(int groupId, String groupName) {
         this.groupId = groupId;
         this.groupName = groupName;
     }
@@ -23,5 +23,10 @@ public class GroupStudentDto {
 
     public void setGroupName(String groupName) {
         this.groupName = groupName;
+    }
+
+    @Override
+    public String toString() {
+        return "Група №" + groupId + ", назва=" + groupName;
     }
 }
