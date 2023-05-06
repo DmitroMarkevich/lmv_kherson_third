@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="355.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lmv_kherson_third.controllers.AddNewStudentViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="355.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lmv_kherson_third.controllers.AddNewStudentController">
    <children>
       <TextField fx:id="nameStudentTextField" layoutX="14.0" layoutY="53.0" prefHeight="34.0" prefWidth="278.0" promptText="Ім'я" />
       <TextField fx:id="surnameStudentTextField" layoutX="308.0" layoutY="53.0" prefHeight="34.0" prefWidth="278.0" promptText="Прізвище" />

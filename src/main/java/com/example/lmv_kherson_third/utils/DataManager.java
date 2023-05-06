@@ -70,8 +70,8 @@ public class DataManager {
         ResultSet resultSet = pst.executeQuery();
 
         while (resultSet.next()) {
-            int groupId = resultSet.getInt("id");
-            String groupName = resultSet.getString("group_name");
+            int groupId = resultSet.getInt("group_id");
+            String groupName = resultSet.getString("name");
             GroupStudentsDto groupStudentDto = new GroupStudentsDto(groupId, groupName);
             allGroupsList.addAll(groupStudentDto);
         }
@@ -98,7 +98,7 @@ public class DataManager {
     }
 
     public void createNewStudentGroup(String name) throws SQLException {
-        String query = "INSERT INTO student_group (group_name) VALUES (?)";
+        String query = "INSERT INTO student_group (name) VALUES (?)";
         PreparedStatement pst = DatabaseConnection.getInstance().prepareStatement(query);
         pst.setString(1, name);
         pst.execute();

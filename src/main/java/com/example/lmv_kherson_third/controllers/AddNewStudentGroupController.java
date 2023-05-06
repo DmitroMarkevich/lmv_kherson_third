@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.sql.SQLException;
 
-public class AddNewStudentGroupViewController {
+public class AddNewStudentGroupController {
     @FXML
     private Button confirmAddNewStudentGroupButton;
 
@@ -29,6 +29,11 @@ public class AddNewStudentGroupViewController {
 
         confirmAddNewStudentGroupButton.setOnAction(actionEvent -> {
             String groupStudentName = nameGroupTextField.getText().trim();
+
+            if (groupStudentName.isEmpty()) {
+                UtilsMethod.showErrorAlert("Поле з назвою групи не може бути пустим!");
+                return;
+            }
             try {
                 new DataManager().createNewStudentGroup(groupStudentName);
                 confirmAddNewStudentGroupButton.getScene().getWindow().hide();

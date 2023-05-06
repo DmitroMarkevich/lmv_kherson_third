@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 import java.sql.SQLException;
 import java.util.List;
 
-public class IndicationStudentGradesViewController {
+public class IndicationStudentGradesController {
     @FXML
     private Button confirmAddNewStudentMarkButton;
 
@@ -49,6 +49,16 @@ public class IndicationStudentGradesViewController {
 
         confirmAddNewStudentMarkButton.setOnAction(actionEvent -> {
             try {
+                if (listStudentsComboBox.getValue() == null) {
+                    UtilsMethod.showErrorAlert("Виберіть студента!");
+                    return;
+                }
+
+                if (studentSubjectMarkTextField.getText().trim().isEmpty()) {
+                    UtilsMethod.showErrorAlert("Введіть оцінку!");
+                    return;
+                }
+
                 int studentId = listStudentsComboBox.getValue().getStudentId();
                 String selectedSubject = listSubjectsComboBox.getValue();
                 double studentMark = Double.parseDouble(studentSubjectMarkTextField.getText().trim());
@@ -62,6 +72,7 @@ public class IndicationStudentGradesViewController {
 
                 confirmAddNewStudentMarkButton.getScene().getWindow().hide();
                 Stage currentStage = (Stage) confirmAddNewStudentMarkButton.getScene().getWindow();
+
                 UtilsMethod.showSuccessAlert("Ви успішно вказали оцінку студента!");
                 UtilsMethod.downloaderPage("main-page-view.fxml", currentStage);
             } catch (NumberFormatException exc) {

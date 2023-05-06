@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 import java.sql.SQLException;
 
-public class SearchStudentViewController {
+public class SearchStudentController {
     @FXML
     public TableColumn<StudentDto, Integer> idStudentColumn;
     @FXML

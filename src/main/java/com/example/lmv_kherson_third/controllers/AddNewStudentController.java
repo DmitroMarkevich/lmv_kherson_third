@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 import java.sql.SQLException;
 
-public class AddNewStudentViewController {
+public class AddNewStudentController {
     @FXML
     private TextField emailStudentTextField;
 
@@ -48,9 +48,6 @@ public class AddNewStudentViewController {
     void initialize() {
         ObservableList<GroupStudentsDto> items = FXCollections.observableArrayList(DataManager.getGroupStudentsListDto());
         groupsComboBox.setItems(items);
-        groupsComboBox.setValue(DataManager.getGroupStudentsListDto().get(
-                DataManager.getGroupStudentsListDto().size() - 1
-        ));
 
         goBackButton.setOnAction(actionEvent -> {
             goBackButton.getScene().getWindow().hide();
@@ -73,6 +70,11 @@ public class AddNewStudentViewController {
                     phoneNumberStudent.isEmpty() || emailStudent.isEmpty() || facultyStudent.isEmpty() ||
                     specialtyStudent.isEmpty()) {
                 UtilsMethod.showErrorAlert("Усі поля повинні бути заповнені!");
+                return;
+            }
+
+            if (selectedStudentGroup == null) {
+                UtilsMethod.showErrorAlert("Виберіть існуючу групу або сторіть її!");
                 return;
             }
 
