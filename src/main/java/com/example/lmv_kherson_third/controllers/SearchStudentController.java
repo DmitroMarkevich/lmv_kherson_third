@@ -99,10 +99,11 @@ public class SearchStudentController {
             String studentName = nameStudentTextField.getText().trim();
             String studentSurname = surnameStudentTextField.getText().trim();
             String idGroup = idGroupStudentTextField.getText().trim();
-            String nameGroup = nameGroupStudentColumn.getText().trim();
+            String nameGroup = nameGroupStudentTextField.getText().trim();
 
             nameStudentTextField.clear();
             surnameStudentTextField.clear();
+            idGroupStudentTextField.clear();
             nameGroupStudentTextField.clear();
 
             tableView.setItems(new DataManager().searchStudents(studentName, studentSurname, idGroup, nameGroup));
