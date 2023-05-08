@@ -6,9 +6,9 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="358.0" prefWidth="686.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lmv_kherson_third.controllers.SearchStudentController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="382.0" prefWidth="732.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lmv_kherson_third.controllers.SearchStudentController">
    <children>
-      <TableView fx:id="tableView" layoutX="31.0" layoutY="116.0" prefHeight="176.0" prefWidth="624.0">
+      <TableView fx:id="tableView" layoutX="32.0" layoutY="121.0" prefHeight="176.0" prefWidth="682.0">
         <columns>
           <TableColumn fx:id="nameStudentColumn" prefWidth="56.79995346069336" text="Ім'я" />
           <TableColumn fx:id="surnameStudentColumn" prefWidth="74.40005493164062" text="Прізвище" />
@@ -18,14 +18,16 @@
             <TableColumn fx:id="facultyStudentColumn" prefWidth="79.20001220703125" text="Факультет" />
             <TableColumn fx:id="specialtyStudentColumn" prefWidth="76.79998779296875" text="Спеціальність" />
             <TableColumn fx:id="idStudentColumn" prefWidth="48.79998779296875" text="ID" />
-            <TableColumn fx:id="idGroupStudentColumn" prefWidth="52.800048828125" text="Група" />
+            <TableColumn fx:id="nameGroupStudentColumn" prefWidth="52.800048828125" text="Група" />
+            <TableColumn fx:id="idGroupStudentColumn" prefWidth="56.80002441406248" text="ID групи" />
         </columns>
       </TableView>
-      <TextField fx:id="nameStudentTextField" layoutX="32.0" layoutY="27.0" prefHeight="34.0" prefWidth="298.0" promptText="Ім'я" />
-      <TextField fx:id="surnameStudentTextField" layoutX="357.0" layoutY="27.0" prefHeight="34.0" prefWidth="298.0" promptText="Прізвище" />
-      <Button fx:id="searchStudentButton" layoutX="527.0" layoutY="305.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="130.0" text="Пошук студента" />
+      <TextField fx:id="nameStudentTextField" layoutX="31.0" layoutY="27.0" prefHeight="34.0" prefWidth="330.0" promptText="Ім'я" />
+      <TextField fx:id="surnameStudentTextField" layoutX="382.0" layoutY="27.0" prefHeight="34.0" prefWidth="330.0" promptText="Прізвище" />
+      <Button fx:id="searchStudentButton" layoutX="581.0" layoutY="305.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="130.0" text="Пошук студента" />
       <Button fx:id="goBackButton" layoutX="32.0" layoutY="305.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="130.0" text="Повернутись назад" />
-      <Button fx:id="deductionStudentButton" layoutX="388.0" layoutY="305.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="130.0" text="Відрахувати студента" />
-      <TextField fx:id="idGroupStudentTextField" layoutX="194.0" layoutY="69.0" prefHeight="34.0" prefWidth="298.0" promptText="Номер групи" />
+      <Button fx:id="deductionStudentButton" layoutX="427.0" layoutY="305.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="130.0" text="Відрахувати студента" />
+      <TextField fx:id="idGroupStudentTextField" layoutX="31.0" layoutY="69.0" prefHeight="34.0" prefWidth="330.0" promptText="Номер групи" />
+      <TextField fx:id="nameGroupStudentTextField" layoutX="382.0" layoutY="69.0" prefHeight="34.0" prefWidth="330.0" promptText="Назва групи" />
    </children>
 </AnchorPane>

@@ -34,6 +34,8 @@ public class SearchStudentController {
     private TableColumn<StudentDto, String> facultyStudentColumn;
     @FXML
     private TableColumn<StudentDto, Integer> idGroupStudentColumn;
+    @FXML
+    private TableColumn<StudentDto, String> nameGroupStudentColumn;
 
     @FXML
     private TextField nameStudentTextField;
@@ -43,6 +45,9 @@ public class SearchStudentController {
 
     @FXML
     private TextField idGroupStudentTextField;
+
+    @FXML
+    private TextField nameGroupStudentTextField;
 
     @FXML
     private Button searchStudentButton;
@@ -60,9 +65,10 @@ public class SearchStudentController {
         middleNameStudentColumn.setCellValueFactory(new PropertyValueFactory<>("middleName"));
         phoneNumberStudentColumn.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
         emailStudentColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
-        specialtyStudentColumn.setCellValueFactory(new PropertyValueFactory<>("specialty"));
         facultyStudentColumn.setCellValueFactory(new PropertyValueFactory<>("faculty"));
+        specialtyStudentColumn.setCellValueFactory(new PropertyValueFactory<>("specialty"));
         idStudentColumn.setCellValueFactory(new PropertyValueFactory<>("studentId"));
+        nameGroupStudentColumn.setCellValueFactory(new PropertyValueFactory<>("nameGroup"));
         idGroupStudentColumn.setCellValueFactory(new PropertyValueFactory<>("groupId"));
         tableView.setItems(DataManager.getStudentsListDto());
 
@@ -93,11 +99,13 @@ public class SearchStudentController {
             String studentName = nameStudentTextField.getText().trim();
             String studentSurname = surnameStudentTextField.getText().trim();
             String idGroup = idGroupStudentTextField.getText().trim();
+            String nameGroup = nameGroupStudentColumn.getText().trim();
 
             nameStudentTextField.clear();
             surnameStudentTextField.clear();
+            nameGroupStudentTextField.clear();
 
-            tableView.setItems(new DataManager().searchStudents(studentName, studentSurname, idGroup));
+            tableView.setItems(new DataManager().searchStudents(studentName, studentSurname, idGroup, nameGroup));
             tableView.refresh();
         });
     }

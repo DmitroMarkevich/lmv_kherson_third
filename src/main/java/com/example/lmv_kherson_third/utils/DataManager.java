@@ -49,11 +49,12 @@ public class DataManager {
             String studentPhoneNumber = resultSet.getString("phone_number");
             String studentFaculty = resultSet.getString("faculty");
             String studentSpecialty = resultSet.getString("specialty");
+            String studentNameGroup = resultSet.getString("nameGroup");
             int studentGroup = resultSet.getInt("group_id");
 
             StudentDto studentDto = new StudentDto(studentId, studentName, studentSurname,
                     studentMiddleName, studentPhoneNumber, studentEmail,
-                    studentFaculty, studentSpecialty, studentGroup);
+                    studentFaculty, studentSpecialty, studentNameGroup, studentGroup);
             studentDtoList.add(studentDto);
         }
         return studentDtoList;
@@ -81,9 +82,9 @@ public class DataManager {
     public void createNewStudent(String name, String surname, String middleName,
                                  String email, String phoneNumber,
                                  String faculty, String specialty,
-                                 int groupId) throws SQLException {
-        String query = "INSERT INTO students (name, surname, middle_name, email, phone_number, group_id, faculty, specialty) " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                                 String nameGroup, int groupId) throws SQLException {
+        String query = "INSERT INTO students (name, surname, middle_name, email, phone_number, group_id, faculty, specialty, nameGroup) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement pst = DatabaseConnection.getInstance().prepareStatement(query);
         pst.setString(1, name);
         pst.setString(2, surname);
@@ -93,8 +94,10 @@ public class DataManager {
         pst.setInt(6, groupId);
         pst.setString(7, faculty);
         pst.setString(8, specialty);
+        pst.setString(9, nameGroup);
         pst.execute();
         studentsListDto = getListStudentsFromDataBase();
+        System.out.println(nameGroup);
     }
 
     public void createNewStudentGroup(String name) throws SQLException {
@@ -130,7 +133,7 @@ public class DataManager {
         pst.executeUpdate();
     }
 
-    public FilteredList<StudentDto> searchStudents(String name, String surname, String idGroup) {
+    public FilteredList<StudentDto> searchStudents(String name, String surname, String idGroup, String nameGroup) {
         FilteredList<StudentDto> filteredList = new FilteredList<>(getStudentsListDto(), p -> true);
 
         if (!name.isEmpty()) {
@@ -143,6 +146,10 @@ public class DataManager {
 
         if (!idGroup.isEmpty()) {
             filteredList = filteredList.filtered(student -> String.valueOf(student.getGroupId()).equals(idGroup));
+        }
+
+        if (!nameGroup.isEmpty()) {
+            filteredList = filteredList.filtered(student -> student.getNameGroup().equals(nameGroup));
         }
 
         return filteredList;

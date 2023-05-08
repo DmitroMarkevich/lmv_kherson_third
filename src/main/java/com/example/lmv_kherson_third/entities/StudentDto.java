@@ -9,11 +9,12 @@ public class StudentDto {
     private String email;
     private String faculty;
     private String specialty;
+    private String nameGroup;
     private int groupId;
 
     public StudentDto(int studentId, String name, String surname,
                       String middleName, String phoneNumber, String email,
-                      String faculty, String specialty, int groupId) {
+                      String faculty, String specialty, String nameGroup, int groupId) {
         this.studentId = studentId;
         this.name = name;
         this.surname = surname;
@@ -23,6 +24,7 @@ public class StudentDto {
         this.faculty = faculty;
         this.specialty = specialty;
         this.groupId = groupId;
+        this.nameGroup = nameGroup;
     }
 
     public int getStudentId() {
@@ -97,9 +99,17 @@ public class StudentDto {
         this.groupId = groupId;
     }
 
+    public String getNameGroup() {
+        return nameGroup;
+    }
+
+    public void setNameGroup(String nameGroup) {
+        this.nameGroup = nameGroup;
+    }
+
     @Override
     public String toString() {
         return "Студент №" + studentId + ", ім'я=" + name +
-                ", прізвище=" + surname + ", група=" + groupId;
+                ", прізвище=" + surname + ", група=" + groupId + "-" + nameGroup;
     }
 }

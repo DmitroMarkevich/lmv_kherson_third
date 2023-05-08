@@ -80,7 +80,7 @@ public class AddNewStudentController {
 
             try {
                 new DataManager().createNewStudent(nameStudent, surnameStudent, middleNameStudent,
-                        phoneNumberStudent, emailStudent, facultyStudent, specialtyStudent, selectedStudentGroup.getGroupId());
+                        phoneNumberStudent, emailStudent, facultyStudent, specialtyStudent, selectedStudentGroup.getGroupName(), selectedStudentGroup.getGroupId());
                 UtilsMethod.showSuccessAlert("Студент успішно доданий!");
                 confirmAddNewStudentButton.getScene().getWindow().hide();
                 Stage currentStage = (Stage) confirmAddNewStudentButton.getScene().getWindow();
