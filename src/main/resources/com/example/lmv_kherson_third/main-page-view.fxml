@@ -15,6 +15,7 @@
         <Button fx:id="addNewStudentButton" layoutX="14.0" layoutY="33.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="152.0" text="Додати нового студента" />
         <Button fx:id="addNewGroupStudentsButton" layoutX="14.0" layoutY="88.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="152.0" text="Додати нову групу" />
         <Button fx:id="addNewMarksStudentButton" layoutX="14.0" layoutY="140.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="152.0" text="Вказати оцінки студента" />
-      <Button fx:id="searchStudentButton" layoutX="14.0" layoutY="192.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="152.0" text="Пошук студентів" />
+      <Button fx:id="searchStudentButton" layoutX="14.0" layoutY="235.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="152.0" text="Пошук студентів" />
+      <Button fx:id="changeStudentCharacteristicsButton" layoutX="14.0" layoutY="187.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="152.0" text="Зміна даних студента" />
     </children>
 </AnchorPane>

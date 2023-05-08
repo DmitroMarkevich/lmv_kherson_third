@@ -10,6 +10,6 @@ public class Application extends javafx.application.Application {
 
     @Override
     public void start(Stage stage) {
-        UtilsMethod.downloaderPage("main-page-view.fxml", stage);
+            UtilsMethod.downloaderPage("main-page-view.fxml", stage);
     }
 }

@@ -124,6 +124,17 @@ public class DataManager {
         studentsListDto = getListStudentsFromDataBase();
     }
 
+    public void updateStudentField(int studentId, String fieldName, String fieldValue) throws SQLException {
+        String sqlCommand = "UPDATE students SET " + fieldName + " = ? WHERE id = ?";
+
+        try (PreparedStatement updateStatement = DatabaseConnection.getInstance().prepareStatement(sqlCommand)) {
+            updateStatement.setString(1, fieldValue);
+            updateStatement.setInt(2, studentId);
+            updateStatement.executeUpdate();
+        }
+        studentsListDto = getListStudentsFromDataBase();
+    }
+
     public void addNewStudentMark(int studentId, String subject, double grade) throws SQLException {
         String query = "INSERT INTO grades (student_id, subject, grade) VALUES (?, ?, ?)";
         PreparedStatement pst = DatabaseConnection.getInstance().prepareStatement(query);

@@ -16,6 +16,9 @@ public class MainPageController {
     private Button addNewStudentButton;
 
     @FXML
+    private Button changeStudentCharacteristicsButton;
+
+    @FXML
     private Button searchStudentButton;
 
     @FXML
@@ -42,6 +45,12 @@ public class MainPageController {
             addNewStudentButton.getScene().getWindow().hide();
             Stage currentStage = (Stage) addNewStudentButton.getScene().getWindow();
             UtilsMethod.downloaderPage("indicationGrades-page-view.fxml", currentStage);
+        });
+
+        changeStudentCharacteristicsButton.setOnAction(actionEvent -> {
+            changeStudentCharacteristicsButton.getScene().getWindow().hide();
+            Stage currentStage = (Stage) changeStudentCharacteristicsButton.getScene().getWindow();
+            UtilsMethod.downloaderPage("changeStudent-page-view.fxml", currentStage);
         });
     }
 }
