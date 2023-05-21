@@ -21,7 +21,7 @@ public class UtilsMethod {
 
         Parent root = loader.getRoot();
         Stage stage = new Stage();
-        stage.setTitle("ВНТУ");
+        stage.setTitle("OXFORD");
         stage.setResizable(false);
         stage.setScene(new Scene(root));
         stage.initOwner(currentStage);
