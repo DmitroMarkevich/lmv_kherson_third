@@ -17,9 +17,8 @@
             <TableColumn fx:id="emailStudentColumn" prefWidth="72.79998779296875" text="Пошта" />
             <TableColumn fx:id="facultyStudentColumn" prefWidth="79.20001220703125" text="Факультет" />
             <TableColumn fx:id="specialtyStudentColumn" prefWidth="76.79998779296875" text="Спеціальність" />
-            <TableColumn fx:id="idStudentColumn" prefWidth="48.79998779296875" text="ID" />
-            <TableColumn fx:id="nameGroupStudentColumn" prefWidth="52.800048828125" text="Група" />
-            <TableColumn fx:id="idGroupStudentColumn" prefWidth="56.80002441406248" text="ID групи" />
+            <TableColumn fx:id="idStudentColumn" prefWidth="73.60003662109375" text="ID" />
+            <TableColumn fx:id="nameGroupStudentColumn" prefWidth="83.199951171875" text="Назва групи" />
         </columns>
       </TableView>
       <TextField fx:id="nameStudentTextField" layoutX="31.0" layoutY="27.0" prefHeight="34.0" prefWidth="330.0" promptText="Ім'я" />

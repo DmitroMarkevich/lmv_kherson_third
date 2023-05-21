@@ -33,8 +33,6 @@ public class SearchStudentController {
     @FXML
     private TableColumn<StudentDto, String> facultyStudentColumn;
     @FXML
-    private TableColumn<StudentDto, Integer> idGroupStudentColumn;
-    @FXML
     private TableColumn<StudentDto, String> nameGroupStudentColumn;
 
     @FXML
@@ -69,7 +67,6 @@ public class SearchStudentController {
         specialtyStudentColumn.setCellValueFactory(new PropertyValueFactory<>("specialty"));
         idStudentColumn.setCellValueFactory(new PropertyValueFactory<>("studentId"));
         nameGroupStudentColumn.setCellValueFactory(new PropertyValueFactory<>("nameGroup"));
-        idGroupStudentColumn.setCellValueFactory(new PropertyValueFactory<>("groupId"));
         tableView.setItems(DataManager.getStudentsListDto());
 
         goBackButton.setOnAction(actionEvent -> {
